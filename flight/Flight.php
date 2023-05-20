@@ -8,12 +8,12 @@ declare(strict_types=1);
  * @license     MIT, http://flightphp.com/license
  */
 
-use flight\core\Dispatcher;
+use flight\Dispatcher;
 use flight\Engine;
-use flight\net\Request;
-use flight\net\Response;
-use flight\net\Router;
-use flight\template\View;
+use flight\Request;
+use flight\Response;
+use flight\Router;
+use flight\View;
 
 /**
  * The Flight class is a static representation of the framework.
@@ -68,17 +68,9 @@ class Flight
     private static Engine $engine;
 
     // Don't allow object instantiation
-    private function __construct()
-    {
-    }
-
-    private function __destruct()
-    {
-    }
-
-    private function __clone()
-    {
-    }
+    private function __construct() { }
+    private function __destruct() { }
+    private function __clone() { }
 
     /**
      * Handles calls to static methods.
@@ -93,7 +85,6 @@ class Flight
     public static function __callStatic(string $name, array $params)
     {
         $app = self::app();
-
         return Dispatcher::invokeMethod([$app, $name], $params);
     }
 
@@ -106,9 +97,7 @@ class Flight
 
         if (!$initialized) {
             require_once __DIR__ . '/autoload.php';
-
             self::$engine = new Engine();
-
             $initialized = true;
         }
 

@@ -8,8 +8,8 @@ declare(strict_types=1);
  * @license     MIT, http://flightphp.com/license
  */
 
-use flight\core\Loader;
+use flight\Loader;
 
-require_once __DIR__ . '/core/Loader.php';
+require_once __DIR__ . '/Loader.php';
 
 Loader::autoload(true, [dirname(__DIR__)]);

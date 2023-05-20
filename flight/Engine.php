@@ -12,12 +12,12 @@ namespace flight;
 
 use ErrorException;
 use Exception;
-use flight\core\Dispatcher;
-use flight\core\Loader;
-use flight\net\Request;
-use flight\net\Response;
-use flight\net\Router;
-use flight\template\View;
+use flight\Dispatcher;
+use flight\Loader;
+use flight\Request;
+use flight\Response;
+use flight\Router;
+use flight\View;
 use Throwable;
 
 /**

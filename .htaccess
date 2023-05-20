@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Povolit přístup k existujícím souborům a složkám
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Přesměrování všech požadavků na index.php
+RewriteRule ^(.*)$ index.php/$1 [L]
